@@ -1,14 +1,20 @@
 {
-  "name": "cordova-plugin-gemini-x-test",
-  "displayName": "Gemini X Test",
+  "name": "cordova-plugin-gemini-x-example",
+  "displayName": "cordova-plugin-gemini-x example",
   "version": "1.0.0",
-  "description": "A sample Apache Cordova application the uses the Gemini X plugin.",
+  "description": "An example Apache Cordova app project to demonstrate usage of cordova-plugin-gemini-x",
   "devDependencies": {
-    "cordova-android": "^12.0.1"
+    "cordova-android": "^12.0.1",
+    "cordova-ios": "^7.0.1",
+    "cordova-plugin-advanced-imagepicker": "github:kevinmcody/cordova-plugin-advanced-imagepicker#dev"
   },
   "cordova": {
     "platforms": [
-      "android"
-    ]
+      "android",
+      "ios"
+    ],
+    "plugins": {
+      "cordova-plugin-advanced-imagepicker": {}
+    }
   }
 }

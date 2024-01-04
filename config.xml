@@ -1,11 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
-    <description>Sample Apache Cordova App</description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
-    </author>
+<widget id="uk.co.workingedge.gemini.x.cordova.example"
+        version="1.0.0"
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0"
+>
+    <name>cordova-plugin-gemini-x example</name>
+    <description>An example Apache Cordova app project to demonstrate usage of cordova-plugin-gemini-x</description>
+    <author email="dave@workingedge.co.uk">Dave Alden</author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+
+    <platform name="android"></platform>
+
+    <platform name="ios">
+        <preference name="UseSwiftLanguageVersion" value="5.0" />
+
+        <config-file platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>Requires photo library access to pick photos to send to Gemini AI</string>
+        </config-file>
+    </platform>
+
 </widget>
