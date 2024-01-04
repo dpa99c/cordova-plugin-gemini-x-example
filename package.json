@@ -1,0 +1,14 @@
+{
+  "name": "cordova-plugin-gemini-x-test",
+  "displayName": "Gemini X Test",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application the uses the Gemini X plugin.",
+  "devDependencies": {
+    "cordova-android": "^12.0.1"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  }
+}
