@@ -68,7 +68,7 @@ function sendMessage(){
         prependToConversation(`${modelName} error: ${error}`, 'error');
     }, text, {
         streamResponse: streamResponse,
-        imageUris: images
+        images: images
     });
 }
 
@@ -87,7 +87,7 @@ function countTokens(){
         hideLoader();
         prependToConversation(`${modelName} token count error: ${error}`, 'error');
     }, text, {
-        imageUris: images
+        images: images
     });
 }
 
@@ -146,7 +146,7 @@ function addHistory(isUser){
         images.forEach(function(image){
             parts.push({
                 type: "image",
-                content: image
+                content: image.uri
             })
         });
     }
@@ -216,7 +216,7 @@ function sendChatMessage(){
         prependToConversation(`${modelName} chat error: ${error}`, 'error');
     }, text, {
         streamResponse: streamResponse,
-        imageUris: images
+        images: images
     });
 }
 
@@ -247,7 +247,7 @@ function countChatTokens(){
     if(text){
         options["text"] = text;
     }if(images.length > 0){
-        options["imageUris"] = images;
+        options["images"] = images;
     }
 
     showLoader();
@@ -339,9 +339,9 @@ function openImagePicker(){
         for(var i = 0; i < mediaEntries.length; i++){
             var mediaEntry = mediaEntries[i];
             if(mediaEntry.type === 'image'){
-                images.push(mediaEntry.src);
+                images.push({uri: mediaEntry.src});
             }else{
-                prependToConversation(`error picking image(s): unsupported media type ${mediaEntry.mediaType} for ${mediaEntry.src}`, 'error');
+                prependToConversation(`error picking image(s): unsupported media type ${mediaEntry.type} for ${mediaEntry.src}`, 'error');
             }
         }
         updateImagesUI();
@@ -354,7 +354,7 @@ function updateImagesUI(){
     var $images = $('#images');
     $images.empty();
     for(var i = 0; i < images.length; i++){
-        var imageUri = images[i],
+        var imageUri = images[i].uri,
             imageId = imageUri.split('/').pop();
         if(imageId.match('-')){
             imageId = imageUri.split('-').pop();
@@ -365,10 +365,13 @@ function updateImagesUI(){
 }
 
 function removeImage(imageUri){
-    var index = images.indexOf(imageUri);
-    if(index > -1){
-        images.splice(index, 1);
-        updateImagesUI();
+    for(var i = 0; i < images.length; i++){
+        var image = images[i];
+        if(image.uri === imageUri){
+            images.splice(i, 1);
+            updateImagesUI();
+            return;
+        }
     }
 }
 
@@ -406,11 +409,9 @@ function displayChatHistory(thisChatHistory){
         for(var j = 0; j < parts.length; j++){
             var part = parts[j];
             if(part.type === 'text'){
-                prependToConversation(`${chatMessage.isUser ? 'You' : modelName + ' chat response'}: ${part.content}`);
-            }else if(part.type === 'image'){
-                images.push(part.content);
+                prependToConversation(`${chatMessage.isUser ? 'You' : modelName + ' chat history'}: ${part.content}`);
             }else{
-                prependToConversation('chat history: part with type "'+part.type+"' cannot be restored/displayed")
+                prependToConversation(`You: IMAGE: ${part.type}`);
             }
         }
     }
