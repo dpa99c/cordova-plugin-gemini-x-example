@@ -58,6 +58,7 @@ function sendMessage(){
         if(streamResponse){
             appendToMessage(messageId, responseText);
             if(isFinal){
+                replaceMessage(messageId, responseText);
                 $('#' + messageId).removeClass('stream');
             }
         }else{
@@ -202,6 +203,7 @@ function sendChatMessage(){
             appendToMessage(messageId, responseText);
             entireStreamedResponse += responseText;
             if(isFinal){
+                replaceMessage(messageId, responseText);
                 $('#' + messageId).removeClass('stream');
                 afterChatResponse(text, entireStreamedResponse);
             }
@@ -305,9 +307,17 @@ function generateUID() {
 }
 
 function appendToMessage(guid, message){
+    message = message.replace(/\n/g, "<br/>");
     var $el = $('#' + guid + ' .message');
     $el.html($el.html() + message);
 }
+
+function replaceMessage(guid, message){
+    message = message.replace(/\n/g, "<br/>");
+    var $el = $('#' + guid + ' .message');
+    $el.html(message);
+}
+
 
 function clearConversation(){
     $conversationOutput.empty();
