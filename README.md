@@ -4,6 +4,7 @@ cordova-plugin-gemini-x example project
 This repo contains an example Cordova app project that illustrates the use of [cordova-plugin-gemini-x](https://github.com/dpa99c/cordova-plugin-gemini-x) which provides a Cordova plugin wrapping the native Google Gemini AI SDKs for [Android](https://ai.google.dev/tutorials/android_quickstart) and [iOS](https://ai.google.dev/tutorials/swift_quickstart).
 
 | Android | iOS |
+| --- | --- |
 | <img width="300" src="screenshots/android.jpg" alt="Android screenshot" /> | <img width="300" src="screenshots/ios.jpg" alt="iOS screenshot" /> |
 
 
