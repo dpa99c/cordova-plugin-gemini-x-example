@@ -6,6 +6,7 @@
   "devDependencies": {
     "cordova-android": "^12.0.1",
     "cordova-ios": "^7.0.1",
+    "cordova-plugin-gemini-x": "*",
     "cordova-plugin-advanced-imagepicker": "github:kevinmcody/cordova-plugin-advanced-imagepicker#dev"
   },
   "cordova": {
@@ -14,7 +15,8 @@
       "ios"
     ],
     "plugins": {
-      "cordova-plugin-advanced-imagepicker": {}
+      "cordova-plugin-advanced-imagepicker": {},
+      "cordova-plugin-gemini-x": {}
     }
   }
 }
