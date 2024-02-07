@@ -1,7 +1,7 @@
 cordova-plugin-gemini-x example project
 ==============================================
 
-This repo contains an example Cordova app project which illustrates the use of [cordova-plugin-gemini-x](https://github.com/dpa99c/cordova-plugin-gemini-x) which provides a Cordova plugin for the native Google Gemini AI SDKs for [Android](https://ai.google.dev/tutorials/android_quickstart) and [iOS](https://ai.google.dev/tutorials/swift_quickstart).
+This repo contains an example Cordova app project that illustrates the use of [cordova-plugin-gemini-x](https://github.com/dpa99c/cordova-plugin-gemini-x) which provides a Cordova plugin wrapping the native Google Gemini AI SDKs for [Android](https://ai.google.dev/tutorials/android_quickstart) and [iOS](https://ai.google.dev/tutorials/swift_quickstart).
 
 | Android | iOS |
 | <img width="300" src="screenshots/android.jpg" alt="Android screenshot" /> | <img width="300" src="screenshots/ios.jpg" alt="iOS screenshot" /> |
@@ -50,8 +50,8 @@ Install the Android and/or iOS platforms into the project
 - `$ cordova platform add ios`
 
 ## iOS
-The Gemini SDK is not currently available via Cocoapods and Cordova doesn't currently support the Swift Package Manager, so you will need to manually add the SDK to your project.
-To add the SDK to your project, follow [these instructions](https://ai.google.dev/tutorials/swift_quickstart#add-sdk).
+The Gemini SDK is not currently available via Cocoapods and Cordova doesn't currently support the Swift Package Manager, so you will need to manually add the SDK to your Xcode project in `platforms/ios/`.
+To add the SDK to your Xcode project, follow [these instructions](https://ai.google.dev/tutorials/swift_quickstart#add-sdk).
 
 # Building and running
 
