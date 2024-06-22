@@ -29,7 +29,6 @@ This repo contains an example Cordova app project that illustrates the use of [c
     - [Text-only conversation](#text-only-conversation)
     - [Text-only conversation with pre-defined history](#text-only-conversation-with-pre-defined-history)
     - [Multi-modal conversation with streaming response](#multi-modal-conversation-with-streaming-response)
-    - [Multi-modal conversation](#multi-modal-conversation)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -73,14 +72,14 @@ The example app is a simple Cordova app which demonstrates the use of the Gemini
 The most basic interaction with the Gemini model is to send a text or text+images message to the model and receive a text response when the model has processed the message.
 
 ### Simple text-only interactions
-- Select the "Pro" model for text-only interactions, then press "Init Model".
+- Select the "1.0 Pro", "1.5 Pro" or "1.5 Flash" models for text-only interactions, then press "Init Model".
 - Type some text into the text box to send to the Gemini model.
 - Press "Send message" to send the text to the Gemini model. 
 - Your message will be displayed in the "Conversation" section.
 - When the model has processed the message, the model response will be displayed in the "Conversation" section.
 
 ### Simple multi-modal interactions
-- Select "Pro Vision" for text and image interactions, then press "Init Model".
+- Select "1.5 Pro" or "1.5 Flash" models for text and image interactions, then press "Init Model".
 - Press the "Add image(s)" button to select one or more images from the device's photo library to send to the Gemini model.
 - Type some text into the text box to send to the Gemini model.
 - Press "Send message" to send the text and image(s) to the Gemini model. 
@@ -92,7 +91,7 @@ The Gemini model can also be interacted with via a streaming interface, which al
 
 ### Streaming text-only interactions
 
-- Select the "Pro" model for text-only interactions, then press "Init Model".
+- Select the "1.0 Pro", "1.5 Pro" or "1.5 Flash" models for text-only interactions, then press "Init Model".
 - Check the "Stream response" checkbox.
 - Type some text into the text box to send to the Gemini model.
 - Press "Send message" to send the text to the Gemini model. 
@@ -101,7 +100,7 @@ The Gemini model can also be interacted with via a streaming interface, which al
 - When the model has processed the message, the final model response will be displayed in black.
 
 ### Streaming multi-modal interactions
-- Select "Pro Vision" for text and image interactions, then press "Init Model".
+- Select "1.5 Pro" or "1.5 Flash" models for text and image interactions, then press "Init Model".
 - Check the "Stream response" checkbox.
 - Press the "Add image(s)" button to select one or more images from the device's photo library to send to the Gemini model.
   - Attached images will be listed by filename below the text box.
@@ -116,7 +115,7 @@ The Gemini model can also be interacted with via a streaming interface, which al
 The Gemini model can also be interacted with via a multi-turn conversation interface, which allows the user to have a freeform conversation with the model and the model response will be contextual to the entire conversation history.
 
 ### Text-only conversation
-- Select the "Pro" model for text-only interactions, then press "Init Model".
+- Select the "1.0 Pro", "1.5 Pro" or "1.5 Flash" models for text-only interactions, then press "Init Model".
 - Press "Init Chat (with history)" to initialise the chat (with an empty chat history).
 - Type some text into the text box to send to the Gemini model.
 - Press "Send message" to send the text to the Gemini model.
@@ -128,7 +127,7 @@ The Gemini model can also be interacted with via a multi-turn conversation inter
 - When the model has processed the message, the model response will be displayed in the "Conversation" section.
 
 ### Text-only conversation with pre-defined history
-- Select the "Pro" model for text-only interactions, then press "Init Model".
+- Select the "1.0 Pro", "1.5 Pro" or "1.5 Flash" models for text-only interactions, then press "Init Model".
 - Type some text into the text box that represents the first message in the conversation from the user to the Gemini model.
 - Press "Add to user chat history" to add the message to chat history.
 - Type some text into the text box that represents the first response in the conversation from the Gemini model to the user.
@@ -146,7 +145,7 @@ The Gemini model can also be interacted with via a multi-turn conversation inter
 ### Multi-modal conversation with streaming response
 The Gemini SDK supports streaming responses for multi-modal conversations. This allows the app to send a message to the model and receive a response in real-time as the model processes the message.
 
-- Select the "Pro" model for text-only interactions, then press "Init Model".
+- Select the "1.0 Pro", "1.5 Pro" or "1.5 Flash" models for text-only interactions, then press "Init Model".
 - Check the "Stream response" checkbox.
 - Press "Init Chat (with history)" to initialise the chat (with an empty chat history).
 - Type some text into the text box to send to the Gemini model.
@@ -155,8 +154,6 @@ The Gemini SDK supports streaming responses for multi-modal conversations. This 
 - As the model processes the message, the response fragments will be displayed in grey in the "Conversation" section.
 - When the model has processed the message, the final model response will be displayed in black.
 
-### Multi-modal conversation
-The Gemini Pro Vision model does not yet support multi-turn conversations with images.
 
 # License
 ================
